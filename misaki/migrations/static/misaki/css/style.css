@@ -1,0 +1,181 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, 'Bubbleboddy', sans-serif;
+}
+
+body{
+  background:#f0f0f0;
+}
+
+/* TOPO */
+
+.topo {
+  background-color: #7A46CB; /*cor do fundo do topo*/
+  width: 100%; /*espaço onde ele estiver inserido (de ponta a ponta).*/
+  position: relative;
+  z-index: 10;
+}
+
+.navbar { /*layout*/
+  display: flex; /*fiquem alinhados um ao lado do outro (em linha), em vez de um embaixo do outro.*/
+  justify-content: space-between; /* Espalha os 3 blocos: esquerda, centro e direita */
+  align-items: center;            /* Alinha todos verticalmente no meio */
+  width: 100%;          /*Faz com que a barra de navegação tente ocupar toda a largura disponível da tela.*/
+  max-width: 1200px;              /* Limita a largura máxima para telas muito grandes */
+  margin: 0 auto;                 /* Centraliza a barra inteira na tela */
+  padding: 5px 40px; /*Cria um espaçamento interno para dar "respiro" ao conteúdo. O primeiro valor (20px) aplica espaçamento em cima e embaixo; o segundo valor (40px) aplica nas laterais esquerda e direita.*/
+}
+
+/* Garante que os três blocos tenham a mesma base de espaço para o logo ficar no centro exato */
+.icons-esquerda, .logo, .menu {
+  flex: 1; 
+}
+
+.icons-esquerda {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end; /* Alinha os ícones totalmente à esquerda */
+}
+
+.icons-esquerda img{
+  width: 30px;
+  height:auto;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  justify-content: center; /* Garante que o logo fique perfeitamente no centro do bloco */
+  margin-top: 10px;
+  margin-bottom: -50px;
+}
+
+/* Ajuste do tamanho da imagem da logo */
+.logo img {
+  height: 200px; /* Altere a altura para o tamanho que achar melhor */
+  width: auto;
+}
+
+.menu{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* Alinha os botões totalmente à direita */
+}
+
+.menu button {
+  padding: 6px 14px;
+  border: 1px solid #FF8585;
+  border-radius: 20px;
+  background: transparent;
+  color: #FF8585;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  border: #FF8585;
+  background:#FF8585;
+  color:#552B98;
+}
+
+/* PRODUTOS */
+
+.produto{
+  font-family: 'Bubbleboddy';
+  color: #FF8693;
+
+}
+
+.topo-categoria h2, .produto {
+  font-family: 'Bubbleboddy', sans-serif;
+  color: #FF8693;         /* O mesmo rosa fofo dos botões */
+  font-size: 36px;        /* Deixa o título grande e destacado */
+  max-width: 90%;      /* Segue o mesmo alinhamento do conteúdo */
+  margin: 40px auto 10px auto; /* Afasta do banner (40px) e centraliza o bloco na tela */
+  padding: 0 40px;        /* Empurra o texto um pouco para a direita para não colar na borda */
+  text-align: left;       /* Garante que o texto comece na esquerda */
+}
+
+.linha{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  width: 100%;
+  max-width: 90%;    /* Alinha o limite da vitrine com o limite do topo */
+  margin: 0 auto;
+}
+
+.col-4{
+  flex-basis: 25%;
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+
+.col-4:hover{
+  transform: scale(1.1);
+}
+
+.col-4 img{
+  width: 100%;
+  object-fit: cover;      /* Corta as sobras da imagem sem distorcer */
+  object-position: center; 
+}
+
+
+.preco {
+  width: 100%;
+  margin-top: 12px;
+  background: #FF8693;    /* O rosa idêntico ao da segunda imagem */
+  color: #00F2F2;            /* Texto branco ou mude para a cor do seu preço */
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;     /* Bordas arredondadas na caixinha de preço */
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/*Banner*/
+
+.banner{
+  width: 100%;
+  display: flex;
+  margin-top: -5px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+  .produtos{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width:500px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .produtos{
+    grid-template-columns:1fr;
+  }
+
+}
