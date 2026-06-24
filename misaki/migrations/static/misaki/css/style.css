@@ -49,7 +49,7 @@ body{
   display: flex;
   justify-content: center; /* Garante que o logo fique perfeitamente no centro do bloco */
   margin-top: 10px;
-  margin-bottom: -50px;
+  margin-bottom: -10px;
 }
 
 /* Ajuste do tamanho da imagem da logo */
