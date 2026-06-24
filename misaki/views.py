@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def tela1(request):
-    return HttpResponse("login")
+    return render(request,"misaki/login.html")
 
 def tela2(request):
-    return HttpResponse("inicial")
+    return render(request,"misaki/inicial.html")
 
 def tela3(request):
-    return HttpResponse("produtos")
+    return render(request,"misaki/produtos.html")
