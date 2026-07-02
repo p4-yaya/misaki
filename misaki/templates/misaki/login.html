@@ -2,142 +2,140 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<a href="{% url 'misaki:login' %}">Sobre</a>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mikasi Login</title>
     <style>
-        
-    /* Fonte */
-    @font-face {
-        font-family: 'Bubbleboddy';
-        src: url('fontes/bubbleboddyneue-regular.ttf') format('truetype');
-    }
-
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
-
-    body{
-        font-family: Arial, sans-serif;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background:linear-gradient(135deg,#4b0082,#7b2cbf,#9d4edd,#c77dff);
-    }
-
-    .card{
-        width:420px;
-        background:#fff;
-        border-radius:25px;
-        padding:40px;
-        box-shadow:0 10px 30px rgba(0,0,0,.25);
-        text-align:center;
-    }
-
-    .logo-img img{
-        width:180px;
-        margin-bottom:20px;
-    }
-
-    .subtitle{
-        color:#5a189a;
-        font-size:20px;
-        margin-bottom:25px;
-        font-family:'Bubbleboddy', Arial, sans-serif;
-    }
-
-    .input{
-        width:100%;
-        padding:15px;
-        margin-bottom:18px;
-        border:2px solid #d8b4fe;
-        border-radius:30px;
-        outline:none;
-        font-size:16px;
-        transition:.3s;
-    }
-
-    .input:focus{
-        border-color:#7b2cbf;
-        box-shadow:0 0 10px rgba(123,44,191,.3);
-    }
-
-    .divider{
-        margin:20px 0;
-        color:#666;
-        font-weight:bold;
-    }
-
-    .google-btn{
-        width:100%;
-        padding:15px;
-        border:none;
-        border-radius:30px;
-        background:linear-gradient(90deg,#6a0dad,#9d4edd);
-        color:white;
-        font-size:17px;
-        font-weight:bold;
-        cursor:pointer;
-        transition:.3s;
-    }
-
-    .google-btn:hover{
-        background:linear-gradient(90deg,#4b0082,#7b2cbf);
-        transform:scale(1.03);
-    }
-
-    .checks{
-        margin-top:25px;
-        text-align:left;
-    }
-
-    .check{
-        display:flex;
-        gap:10px;
-        margin-bottom:15px;
-        font-size:14px;
-        color:#555;
-    }
-
-    .check input{
-        accent-color:#7b2cbf;
-        margin-top:3px;
-    }
-
-    @media (max-width:480px){
-
-        .card{
-            width:90%;
-            padding:30px;
+        /* Fonte */
+        @font-face {
+            font-family: 'Bubbleboddy';
+            src: url('fontes/bubbleboddyneue-regular.ttf') format('truetype');
         }
 
-        .logo-img img{
-            width:150px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-    }
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4b0082, #7b2cbf, #9d4edd, #c77dff);
+        }
 
+        .card {
+            width: 420px;
+            background: #fff;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            text-align: center;
+        }
+
+        .logo-img img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #5a189a;
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-family: 'Bubbleboddy', Arial, sans-serif;
+        }
+
+        .input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 18px;
+            border: 2px solid #d8b4fe;
+            border-radius: 30px;
+            outline: none;
+            font-size: 16px;
+            transition: .3s;
+        }
+
+        .input:focus {
+            border-color: #7b2cbf;
+            box-shadow: 0 0 10px rgba(123, 44, 191, .3);
+        }
+
+        .divider {
+            margin: 20px 0;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #6a0dad, #9d4edd);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .google-btn:hover {
+            background: linear-gradient(90deg, #4b0082, #7b2cbf);
+            transform: scale(1.03);
+        }
+
+        .checks {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .check {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .check input {
+            accent-color: #7b2cbf;
+            margin-top: 3px;
+        }
+
+        @media (max-width:480px) {
+
+            .card {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .logo-img img {
+                width: 150px;
+            }
+
+        }
     </style>
 
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    
+
     <div class="card">
-      
+
         <!-- LOGO IMAGEM -->
         <div class="logo-img">
-            <img src="/misaki/migrations/static/img/imagensconstrução/logo.png" alt="Misaki">
+            <img src="{% static 'misaki/img/logo.png' %}" alt="Misaki">
         </div>
 
         <!-- FORM -->
-        <form>
+        
 
             <p class="subtitle">
                 Faça login ou crie uma conta
@@ -151,9 +149,11 @@
                 ou
             </div>
 
-            <button class="google-btn">
-                entrar com google
-            </button>
+            <a href="{% url 'misaki:inicial' %}">
+                <button class="google-btn">
+                    Entrar
+                </button>
+            </a>
 
             <div class="checks">
 
@@ -180,7 +180,7 @@
 
             </div>
 
-        </form>
+     
 
     </div>
 

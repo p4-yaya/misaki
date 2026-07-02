@@ -21,9 +21,11 @@
       <div class="navbar">
   
         <div class="menu">
-          <button>Home</button>
-          <button>Produtos</button>
-          <button>Contato</button>
+          <a href="{% url 'misaki:inicial' %}"><button>Home</button></a>
+          <a href="{% url 'misaki:produtos' %}"><button>Produtos</button></a>
+          <a href="#"><button>Contato</button></a>
+          
+         
         </div>
   
         <div class="logo">
