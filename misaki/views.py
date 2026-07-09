@@ -8,3 +8,6 @@ def inicial(request):
 
 def produtos(request):
     return render(request,"misaki/produtos.html")
+
+def contato(request):
+    return render(request,"misaki/contato.html")
