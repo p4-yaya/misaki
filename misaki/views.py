@@ -11,6 +11,3 @@ def produtos(request):
 
 def produtos2(request):
     return render(request,"misaki/produtos2.html")
-
-def contato(request):
-    return render(request,"misaki/contato.html")

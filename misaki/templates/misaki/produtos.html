@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="{% static 'misaki/css/style.css' %}">
     <title>Produto</title>    
 </head>
 <body>
@@ -53,7 +53,7 @@
 
         <section class="info-produto">
             <h1 class="titulo-produto">Bastidor 16cm - Fairy Tail</h1>
-            <div class="preco">R$ 130,00</div>
+            <div class="valor">R$ 130,00</div>
 
             <div class="acoes-compra">
                 <button class="seletor-qtd">+ 1</button>
@@ -95,7 +95,7 @@
 </body>
 
 <style>
-*{
+/* *{
   margin:0;
   padding:0;
   box-sizing:border-box;
@@ -104,18 +104,19 @@
 
 body{
   background:#f0f0f0;
-}
+} */
 
 /* TOPO */
-
+/* 
 .topo {
   background-color: #7A46CB; 
   width: 100%; 
   position: relative;
   z-index: 10;
-}
+} */
 
-.navbar { /*layout*/
+/*layout*/
+/* .navbar { 
   display: flex; 
   justify-content: space-between; 
   align-items: center;           
@@ -123,44 +124,44 @@ body{
   max-width: 1200px;           
   margin: 0 auto;                
   padding: 5px 40px; 
-}
+} */
 
-.icons-esquerda, .logo, .menu {
+/* .icons-esquerda, .logo, .menu {
   flex: 1; 
-}
+} */
 
-.icons-esquerda {
+/* .icons-esquerda {
   display: flex;
   gap: 25px;
   justify-content: flex-end;
-}
+} */
 
-.icons-esquerda img{
+/* .icons-esquerda img{
   width: 30px;
   height:auto;
   cursor: pointer;
-}
+} */
 
-.logo {
+/* .logo {
   display: flex;
   justify-content: center; 
   margin-top: 10px;
   margin-bottom: -10px;
-}
+} */
 
 
-.logo img {
+/* .logo img {
   height: 200px; 
   width: auto;
-}
+} */
 
-.menu{
+/* .menu{
   display: flex;
   gap: 10px;
   justify-content: flex-start; 
-}
+} */
 
-.menu button {
+/* .menu button {
 background: #FF5E6F;
 color: #FFE1E1;
 border: none;
@@ -170,14 +171,14 @@ font-size: 16px;
 font-weight: bold;
 cursor: pointer;
 transition: .3s;
-}
+} */
 
-.menu button:hover {
+/* .menu button:hover {
     background: #d8b4fe;
     transform: translateY(-3px);
-}
+} */
 
-/* --- CONTAINER PRINCIPAL --- */
+/* --- CONTAINER PRINCIPAL ---
 .produto-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -189,7 +190,7 @@ transition: .3s;
 }
 
 /* --- GALERIA DE IMAGENS --- */
-.galeria {
+/* .galeria {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,10 +229,10 @@ transition: .3s;
 
 .miniatura.ativa {
     border: 2px solid #ff4d4d; /* Destaque na miniatura selecionada */
-}
+
 
 /* --- DETALHES DO TEXTO --- */
-.info-produto {
+/* .info-produto {
     display: flex;
     flex-direction: column;
 }
@@ -254,7 +255,7 @@ transition: .3s;
 }
 
 /* --- BOTÕES DE COMPRA --- */
-.acoes-compra {
+/* .acoes-compra {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
@@ -304,10 +305,10 @@ transition: .3s;
 .btn-carrinho:hover, .btn-compre-ja:hover {
     background-color: #5a189a;
     transform: scale(1.01);
-}
+} */
 
 /* --- DESCRIÇÕES --- */
-.texto-introducao {
+/* .texto-introducao {
     color: #ff4d6d;
     font-size: 15px;
     line-height: 1.5;
@@ -358,11 +359,11 @@ transition: .3s;
 .texto-rodape {
     color: #7b2cbf;
     font-weight: bold;
-    margin-top: 10px;
-}
+    margin-top: 10px; 
+} */ 
 
 /* Responsividade Básica */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .produto-container {
         grid-template-columns: 1fr;
     }
@@ -371,5 +372,5 @@ transition: .3s;
         gap: 15px;
     }
 }
-</style>
+</style> */
 </html>
