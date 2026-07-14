@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    font-family: Arial, 'Helvetica', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -201,12 +201,13 @@ body {
 }
 
 .seta-carrossel {
-    background: none;
-    border: none;
+    text-decoration: none; /* Remove o sublinhado */
     font-size: 24px;
-    color: #7b2cbf;
+    color: #7b2cbf;        /* A cor roxa do seu design */
+    font-weight: bold;
     cursor: pointer;
 }
+
 
 .miniatura {
     width: 70px;

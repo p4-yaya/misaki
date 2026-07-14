@@ -40,14 +40,26 @@
 <main class="produto-container">
         
         <section class="galeria">
-            <img class="foto-principal" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Bastidores">
+            <!-- 1. A foto principal agora é definida dinamicamente pelo Python -->
+            <img class="foto-principal" src="{% static foto_atual %}" alt="Bastidor Fairy Tail">
             
             <div class="carrossel-miniaturas">
-                <button class="seta-carrossel">&larr;</button>
-                <img class="miniatura ativa" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Miniatura 2">
-                <img class="miniatura" src="{% static 'misaki/img/produtos/pd2.png' %}" alt="Miniatura 3">
-                <img class="miniatura" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Miniatura 4">
-                <button class="seta-carrossel">&rarr;</button>
+                <!-- 2. Seta Esquerda agora aponta para o ID anterior -->
+                <a href="?foto={{ anterior_id }}" class="seta-carrossel">&larr;</a>
+                
+                <!-- 3. Miniaturas envoltas em links que definem o parâmetro '?foto=' -->
+                <a href="?foto=0">
+                    <img class="miniatura {% if foto_id_atual == 0 %}ativa{% endif %}" src="{% static 'misaki/img/produtos/pd1.png' %}" alt="Miniatura 1">
+                </a>
+                <a href="?foto=1">
+                    <img class="miniatura {% if foto_id_atual == 1 %}ativa{% endif %}" src="{% static 'misaki/img/produtos/pd2.png' %}" alt="Miniatura 2">
+                </a>
+                <a href="?foto=2">
+                    <img class="miniatura {% if foto_id_atual == 2 %}ativa{% endif %}" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Miniatura 3">
+                </a>
+                
+                <!-- 4. Seta Direita agora aponta para o próximo ID -->
+                <a href="?foto={{ proximo_id }}" class="seta-carrossel">&rarr;</a>
             </div>
         </section>
 
