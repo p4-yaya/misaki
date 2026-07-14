@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mikasi Store</title>
+  <link rel="stylesheet" href="{% static 'misaki/css/style.css' %}">
+</head>
+<body class="sobre-body">
+
+  <header class="toposobre">
+
+    <div class="curva"></div>
+
+    <div class="navbar">
+
+      <div class="menu">
+
+        <a href="{% url 'misaki:inicial' %}">
+            <button>Home</button>
+        </a>
+
+        <a href="https://wa.me/5584992304198" target="_blank">
+            <button>Contato</button>
+        </a>  
+      </div>
+
+      <div class="logo">
+        <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
+      </div>
+
+      <div class="icons-esquerda">
+        <img src="{% static 'misaki/img/sacola.png' %}" alt="compras">
+        <img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar">
+      </div>
+
+    </div>
+
+  </header>
+
+  <div class="banner">
+    <img src="{% static 'misaki/img/fotos1.png' %}" alt="banner" class="banner-img">
+  </div>
+
+<main class="sobre-container">
+        
+        <!-- Coluna da Esquerda (Textos) -->
+        <section class="sobre-textos">
+            <h2>✨Bem-vindo ao Universo do Misaki Ateliê !!!✨</h2>
+            
+            <p>O Misaki Ateliê é um espaço onde o carinho do trabalho feito à mão se une à paixão pela cultura geek e japonesa.</p>
+            
+            <p>Localizado em Natal (RN), no bairro de Igapó, o ateliê nasceu do desejo de criar peças únicas, afetivas e cheias de personalidade para quem ama animes, jogos e a cultura pop.</p>
+
+            <h3>A Nossa História: 🧵</h3>
+            <p>O Misaki Ateliê ganha vida pelas mãos de Luiza Suellen, mãe, microempreendedora e apaixonada pelo universo geek. Na pandemia, ela encontrou no bordado um refúgio terapêutico que logo se transformou em paixão profissional. Criativa e detalhista, Luiza superou a timidez para criar sua própria marca e unir a costura artesanal à cultura geek. Embora o ateliê ainda não seja sua fonte de renda principal, cada peça é feita com carinho e a dedicação de quem tem um grande sonho de consolidar o ateliê como um negócio estável e reconhecido.</p>
+
+            <h3>O que Produzimos? 🎨</h3>
+            <p>Todas as nossas peças são feitas 100% à mão, com materiais de qualidade e muita dedicação. Nosso foco é traduzir o seu personagem favorito em fios e tecidos, criando itens exclusivos:</p>
+            
+            <p><strong>Chaveiros Bordados:</strong> Pequenos pedacinhos de arte para carregar com você no dia a dia.</p>
+            <p><strong>Bastidores Decorativos:</strong> Bordados em molduras de madeira para decorar o seu quarto, setup gamer ou escritório com estilo.</p>
+            <p><strong>Peças Únicas Personalizadas:</strong> Trabalhamos sob encomenda para garantir que cada detalhe seja exatamente do jeito que você imaginou.</p>
+            
+            <h3>o Misaki Ateliê está pronto para transformar sua ideia em arte.</h3>
+        
+        </section>
+
+        <!-- Coluna da Direita (Imagens) -->
+        <section class="sobre-imagens">
+            <div>
+                <img class="foto-evento" src="{% static 'misaki/img/evento.png' %}" alt="Luiza na ggcon">
+            </div>
+
+            <div>
+            <img class="foto-evento" src="{% static 'misaki/img/image5.png' %}" alt="Luiza na ggcon">
+            </div>
+
+        </section>
+
+    </main>
+
+
+</body>
+</html>

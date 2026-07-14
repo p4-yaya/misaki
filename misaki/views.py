@@ -6,6 +6,9 @@ def login(request):
 def inicial(request):
     return render(request, "misaki/inicial.html")
 
+def sobre(request):
+    return render(request, "misaki/sobre.html")
+
 # --- SUA FUNÇÃO PRODUTOS ATUALIZADA ---
 def produtos(request):
     # 1. Lista com o caminho das suas 3 imagens dentro de 'static'
