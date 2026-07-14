@@ -73,11 +73,19 @@ body {
 
   .icons-esquerda,
   .logo,
-  .menu {
+  .menu,
+  .icons {
     flex: 1;
   }
 
   /* ÍCONES */
+
+  .insta{
+    display: flex;
+    gap: 25px;
+    width: 30px; 
+  }
+
   .icons-esquerda {
     display: flex;
     justify-content: flex-end;
