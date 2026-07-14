@@ -41,9 +41,9 @@ def produtos(request):
 
 def produtos2(request):
     fotos = [
-        'misaki/img/produtos/pd1.png',
-        'misaki/img/produtos/pd2.png',
         'misaki/img/produtos/pd3.png',
+        'misaki/img/produtos/pd3_1.png',
+        'misaki/img/produtos/pd3_2.png',
     ]
     
     foto_id = int(request.GET.get('foto', 0))
