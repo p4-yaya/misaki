@@ -1,0 +1,116 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #4b0082, #7b2cbf, #9d4edd, #c77dff);
+        }
+
+        .card {
+            width: 420px;
+            background: #fff;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* cabecalho */
+
+        .logo img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #5a189a;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        /* fim cabecalho */
+
+        /* inicio formulario */
+
+        .formulario {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+            width: 100%;                    /* Garante que ocupe a largura total útil do card */
+            font-size: 14px;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 18px;
+            border: 2px solid #d8b4fe;
+            border-radius: 30px;
+            outline: none;
+            font-size: 16px;
+            transition: .3s;
+        }
+
+        .input:focus {
+            border-color: #7b2cbf;
+            box-shadow: 0 0 10px rgba(123, 44, 191, .3);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 18px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #6a0dad, #9d4edd);
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+
+        .btn:hover {
+            background: linear-gradient(90deg, #4b0082, #7b2cbf);
+            transform: scale(1.03);
+        }
+
+        .divider {
+            margin: 20px 0;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .check {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;           
+        width: 100%;                    
+        margin: 20px 0;
+        font-size: 14px;
+        color: #555;
+        }
+
+
+
+        @media (max-width:480px) {
+
+            .card {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .logo-img img {
+                width: 150px;
+            }
+
+        }
