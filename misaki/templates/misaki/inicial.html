@@ -1,211 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mikasi Store</title>
-
-  <style>
-        /*Importa o arquivo da fonte */
-        @font-face {
-           font-family: 'Bubbleboddy'; 
-          src: url('fontes/bubbleboddyneue-regular.ttf') format('truetype'); 
-          font-weight: normal;
-          font-style: normal;
-      }
-  </style>
-  <link rel="stylesheet" href="{% static 'misaki/migrations/style.css' %}">
-</head><style>
-  /* Importa a fonte */
-  @font-face {
-      font-family: 'Bubbleboddy';
-      src: url('fontes/bubbleboddyneue-regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-  }
-
-  *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-  }
-
-  body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:#f7f0ff;
-  }
-
-  /* TOPO */
-  .topo{
-      background:linear-gradient(135deg,#4b0082,#7b2cbf,#b5179e);
-      height:130px;
-      position:relative;
-      box-shadow:0 5px 15px rgba(0,0,0,.2);
-  }
-
-  .curva{
-      position:absolute;
-      bottom:-30px;
-      width:100%;
-      height:60px;
-      background:#fff;
-      border-radius:50% 50% 0 0;
-  }
-
-  .navbar{
-      max-width:1200px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px;
-      position:relative;
-      z-index:2;
-  }
-
-  /* MENU */
-  .menu{
-      display:flex;
-      gap:20px;
-  }
-
-  .menu button{
-      background:#fff;
-      color:#6a0dad;
-      border:none;
-      padding:12px 25px;
-      border-radius:30px;
-      font-size:16px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:.3s;
-  }
-
-  .menu button:hover{
-      background:#d8b4fe;
-      transform:translateY(-3px);
-  }
-
-  /* LOGO */
-  .logo img{
-      width:100px;
-  }
-
-  /* ÍCONES */
-  .icons-esquerda{
-      display:flex;
-      gap:20px;
-  }
-
-  .icons-esquerda img{
-      width:35px;
-      transition:.3s;
-      cursor:pointer;
-  }
-
-  .icons-esquerda img:hover{
-      transform:scale(1.2);
-  }
-
-  /* BANNER */
-  .banner{
-      margin-top:60px;
-      display:flex;
-      justify-content:center;
-  }
-
-  .banner-img{
-      width:90%;
-      border-radius:20px;
-      box-shadow:0 8px 20px rgba(123,44,191,.3);
-  }
-
-  /* TÍTULO */
-  .produto{
-      text-align:center;
-      color:#5a189a;
-      font-size:40px;
-      margin:50px 0 30px;
-      font-family:'Bubbleboddy', sans-serif;
-  }
-
-  /* PRODUTOS */
-  .corpo-categoria{
-      width:95%;
-      margin:auto;
-  }
-
-  .linha{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-      margin-bottom:40px;
-  }
-
-  .col-4{
-      background:#fff;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 8px 20px rgba(0,0,0,.15);
-      transition:.4s;
-      text-align:center;
-  }
-
-  .col-4:hover{
-      transform:translateY(-10px);
-      box-shadow:0 15px 25px rgba(90,24,154,.35);
-  }
-
-  .col-4 img{
-      width:100%;
-      padding:15px;
-  }
-
-  /* BOTÃO DE COMPRA */
-  .preco{
-      background:linear-gradient(90deg,#7b2cbf,#c77dff);
-      color:white;
-      padding:18px;
-      font-size:18px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:.3s;
-  }
-
-  .preco:hover{
-      background:linear-gradient(90deg,#5a189a,#9d4edd);
-  }
-
-  /* RESPONSIVO */
-  @media(max-width:768px){
-
-      .navbar{
-          flex-direction:column;
-          gap:20px;
-      }
-
-      .menu{
-          flex-wrap:wrap;
-          justify-content:center;
-      }
-
-      .produto{
-          font-size:32px;
-      }
-
-      .logo img{
-          width:80px;
-      }
-
-      .banner-img{
-          width:95%;
-      }
-
-  }
-</style>
+  <link rel="stylesheet" href="{% static 'misaki/css/style.css' %}">
+</head>
 <body>
-  <a href="{% url 'misaki:login' %}">Sobre</a>
 
   <header class="topo">
 
@@ -214,65 +17,90 @@
     <div class="navbar">
 
       <div class="menu">
-        <button>Home</button>
-        <button>Produtos</button>
+      <a href="{% url 'misaki:sobre' %}">
+        <button>Sobre</button>
+      </a>
+      <a href="https://wa.me/5584992304198" target="_blank">
         <button>Contato</button>
+      </a>  
       </div>
 
       <div class="logo">
-        <h1><img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\imagensconstrução\m.png" alt="m"></h1>
+        <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
       </div>
 
       <div class="icons-esquerda">
-        <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\imagensconstrução\sacola.png" alt="compras">
-        <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\imagensconstrução\lupa.png" alt="pesquisar">
+        <a href="{% url 'misaki:login' %}"><img src="{% static 'misaki/img/sacola.png' %}" alt="compras"></a>
+        <a href=""><img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar"></a>
       </div>
 
     </div>
 
   </header>
-  
-    <div class="banner">
-      <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\imagensconstrução/fotos.png" alt="banner" class="banner-img">
-    </div>
-    
+
+  <div class="banner">
+    <img src="{% static 'misaki/img/fotos.png' %}" alt="banner" class="banner-img">
+  </div>
+
     <div class="corpo-categoria">
 
       <h2 class="produto">Produtos:</h2>
 
       <div class="linha">
-
+        <a href="{% url 'misaki:produtos' %}">
           <div class="col-4">
-            <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\imgg\produtos/pd1.png" alt="">
+            <img src="{% static 'misaki/img/produtos/pd1.png' %}" alt="">
+            <div class="preco">Comprar - R$ 130,00</div>
+          </div>
+        </a>
+
+
+        <a href="{% url 'misaki:produtos2' %}">
+          <div class="col-4">
+            <img src="{% static 'misaki/img/produtos/pd3.png' %}" alt="">
+            <div class="preco">Comprar - R$ 100,00</div>
+          </div>
+        </a>
+
+        <a href="{% url 'misaki:produtos' %}">
+          <div class="col-4">
+            <img src="{% static 'misaki/img/produtos/pd2.png' %}" alt="">
+            <div class="preco">Apartir de R$ 20,00</div>
+          </div>
+        </a>
+
+        <a href="{% url 'misaki:produtos' %}">
+          <div class="col-4">
+            <img src="{% static 'misaki/img/produtos/pd4.png' %}" alt="">
             <div class="preco">Comprar - R$ 49,90</div>
           </div>
+        </a>
 
+        <a href="{% url 'misaki:produtos' %}">
           <div class="col-4">
-            <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\produtos/pd2.png" alt="">
+            <img src="{% static 'misaki/img/produtos/pd5.png' %}" alt="">
             <div class="preco">Comprar - R$ 49,90</div>
           </div>
+        </a>
 
+        <a href="{% url 'misaki:produtos' %}">
           <div class="col-4">
-            <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\produtos/pd3.png" alt="">
+            <img src="{% static 'misaki/img/produtos/pd6.png' %}" alt="">
             <div class="preco">Comprar - R$ 49,90</div>
           </div>
-
-          <div class="col-4">
-            <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\produtos/pd4.png" alt="">
-            <div class="preco">Comprar - R$ 49,90</div>
-          </div>
-
-          <div class="col-4">
-            <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\produtos/pd5.png" alt="">
-            <div class="preco">Comprar - R$ 49,90</div>
-          </div>
-
-          <div class="col-4">
-            <img src="C:\Users\20261016270050\Desktop\misaki\misaki\migrations\static\img\produtos/pd6.png" alt="">
-            <div class="preco">Comprar - R$ 49,90</div>
-          </div>
+        </a>
 
       </div>
+    </div>
+
+  <footer>
+    <p>
+    <a href="https://www.instagram.com/misakiatelie/" target="_blank"> 
+    <img class="insta" src="{% static 'misaki/img/insta.png' %}" alt="instagram"> @misakiatelie
+    </a> © 2026 Misaki Store. Todos os direitos reservados.
+    </p>
+  </footer>
 
 </body>
+
 </html>

@@ -1,0 +1,636 @@
+/* tela inicial */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #f7f0ff;    
+}
+
+  /* TOPO */
+  .topo {
+    background-color: #7A46CB;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px 40px;
+  }
+
+  /* MENU */
+  .menu {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+
+  .menu button {
+    background: #FF5E6F;
+    color: #FFE1E1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .menu button:hover {
+    background: #d8b4fe;
+    transform: translateY(-3px);
+  }
+
+  /* LOGO */
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+
+  .logo img {
+    height: 200px;
+    width: auto;
+  }
+
+  .icons-esquerda,
+  .logo,
+  .menu,
+  .icons {
+    flex: 1;
+  }
+
+  /* ÍCONES */
+
+  .icons-esquerda {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+  }
+
+  .icons-esquerda img {
+    width: 30px;
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  .icons-esquerda img:hover {
+    transform: scale(1.2);
+  }
+
+  /* BANNER */
+  .banner {
+    width: 100%;
+    display: flex;
+    margin-top: -5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .banner-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  /* TÍTULO */
+  .produto {
+    text-align: center;
+    color: #FF5E6F;
+    font-size: 40px;
+    margin: 50px 0 30px;
+    font-family: 'Bubbleboddy', sans-serif;
+  }
+
+  /* PRODUTOS */
+  .corpo-categoria {
+    width: 95%;
+    margin: auto;
+  }
+
+  .linha {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .col-4 {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    transition: .4s;
+    text-align: center;
+  }
+
+  .col-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(90, 24, 154, .35);
+  }
+
+  .col-4 img {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* BOTÃO DE COMPRA */
+  .preco {
+    background: #FF8693;
+    color: white;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .preco:hover {
+    background: #6a0dad;
+  }
+
+  /* pagina de produtos */
+
+  /* --- CONTAINER PRINCIPAL --- */
+.produto-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* --- GALERIA DE IMAGENS --- */
+.galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-principal {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carrossel-miniaturas {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.seta-carrossel {
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 24px;
+    color: #7b2cbf;        /* A cor roxa do seu design */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.miniatura {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.miniatura.ativa {
+    border: 2px solid #ff4d4d; /* Destaque na miniatura selecionada */
+}
+
+/* --- DETALHES DO TEXTO --- */
+.info-produto {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-produto {
+    color: #5a189a;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.valor {
+    color: #70b324;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* --- BOTÕES DE COMPRA --- */
+.acoes-compra {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.seletor-qtd {
+    background-color: #a278d6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-carrinho {
+    flex-grow: 1;
+    background-color: #7b2cbf;
+    color: #a3ff12;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-compre-ja {
+    width: 100%;
+    background-color: #7b2cbf;
+    color: #a3ff12;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.btn-carrinho:hover, .btn-compre-ja:hover {
+    background-color: #5a189a;
+    transform: scale(1.01);
+}
+
+/* --- DESCRIÇÕES --- */
+.texto-introducao {
+    color: #ff4d6d;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.secao-detalhes {
+    margin-bottom: 20px;
+}
+
+.secao-detalhes h3 {
+    color: #ff4d6d;
+    font-size: 22px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.secao-detalhes ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.secao-detalhes ul li {
+    color: #ff4d6d;
+    font-size: 20px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.secao-detalhes ul li::before {
+    content: "•";
+    color: #ff4d6d;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+.secao-detalhes p {
+    color: #ff4d6d;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.texto-rodape {
+    color: #7b2cbf;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.sobre-body {
+    background-color: #552B98; /* Roxo escuro de fundo */
+    color: #FFD7DB;            /* Letras amarelo-ouro/creme */
+}
+
+
+/* Container de Duas Colunas */
+.sobre-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Lado esquerdo texto um pouco maior */
+    gap: 50px;
+    align-items: start;
+}
+
+/* Coluna de Textos */
+.sobre-textos h2 {
+    color: #fce166;
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.sobre-textos h3 {
+    color: #fce166;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(252, 225, 102, 0.3);
+    padding-bottom: 5px;
+}
+
+.sobre-textos p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #fff6cc; /* Tom de creme levemente mais claro para leitura fluida */
+}
+
+
+/* Coluna das Imagens */
+.sobre-imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+
+.foto-evento {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+footer {
+    background-color: #7A46CB;
+    color: #FFE1E1;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    min-height: 100px;
+
+}
+
+.insta{
+  width: 20px;          /* Ajuste a largura como preferir (ex: 18px, 20px, 24px) */
+  height: auto;         /* Mantém a proporção da imagem */
+  vertical-align: middle; /* Alinha a imagem verticalmente com o texto do botão */
+}
+
+
+/* --- COMPORTAMENTO GERAL CONTRA VAZAMENTO (Adicione isso para segurança) --- */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Impede totalmente a rolagem horizontal/tela cortada */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- RESPONSIVO PARA CELULAR (Telas até 768px) --- */
+@media (max-width: 768px) {
+
+    /* 1. TOPO (Header) - Alinhamento e quebra de linha */
+    .topo {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .navbar {
+        display: flex !important;
+        flex-direction: row !important; /* Força a ficar lado a lado na horizontal */
+        justify-content: space-between !important; /* Espalha os blocos: esquerda, centro, direita */
+        align-items: center !important;
+        padding: 10px 15px !important; /* Reduz o padding para sobrar mais espaço */
+        gap: 5px !important;
+    }
+
+    /* Reseta as divisões de largura de desktop */
+    .menu,
+    .logo,
+    .icons-esquerda {
+        flex: 1 !important;
+        display: flex !important;
+        width: auto !important;
+    }
+
+  /* 3. LOGO (Centro) */
+    .logo {
+        justify-content: center !important;
+        margin: 0 !important; /* Remove qualquer margem que empurre outros itens */
+    }
+
+    .logo img {
+        height: 60px !important; /* Reduz bastante o logo para ele caber no meio sem empurrar as laterais */
+        width: auto !important;
+    }
+
+ /* 2. MENU (Esquerda) */
+    .menu {
+        justify-content: flex-start !important;
+        gap: 5px !important; /* Reduz o espaço entre os botões */
+    }
+
+    .menu button {
+        padding: 6px 10px !important; /* Botões menores para caber lado a lado */
+        font-size: 11px !important;   /* Fonte menor */
+        border-radius: 15px !important;
+    }
+
+
+    /* 4. ÍCONES (Direita) */
+    .icons-esquerda {
+        justify-content: flex-end !important;
+        gap: 12px !important; /* Aproxima os ícones da sacola e lupa */
+    }
+
+    .icons-esquerda img {
+        width: 22px !important; /* Ícones menores para harmonizar com o resto */
+    }
+
+
+    /* 2. PÁGINA DE PRODUTO - Força coluna única */
+    .produto-container {
+        display: flex !important;
+        flex-direction: column !important; /* Empilha foto em cima e texto embaixo */
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px !important;
+        margin: 10px auto !important;
+        box-sizing: border-box;
+    }
+
+    .galeria {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .foto-principal {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Evita que as miniaturas criem barra de rolagem geral na tela */
+    .carrossel-miniaturas {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Se não couberem na linha, elas quebram para a de baixo */
+        gap: 10px;
+    }
+
+    .miniatura {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* 3. TEXTOS E DETALHES DO PRODUTO */
+    .info-produto {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 15px;
+    }
+
+    .titulo-produto {
+        font-size: 24px !important;
+        text-align: center;
+    }
+
+    .valor {
+        font-size: 20px !important;
+        text-align: center;
+    }
+
+    /* Ajuste dos botões de compra */
+    .acoes-compra {
+        display: flex !important;
+        width: 100% !important;
+        gap: 10px;
+    }
+
+    .seletor-qtd {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-carrinho {
+        font-size: 13px !important;
+        padding: 10px !important;
+    }
+
+    .btn-compre-ja {
+        font-size: 16px !important;
+        padding: 12px !important;
+    }
+
+    /* 4. RODAPÉ (Footer) */
+    footer {
+        padding: 15px 10px !important;
+        font-size: 12px !important;
+    }
+    /* --- PÁGINA SOBRE NO MOBILE --- */
+
+    /* 1. Transforma o grid de duas colunas em uma coluna única */
+    .sobre-container {
+        display: flex !important;
+        flex-direction: column !important; /* Empilha o texto e depois as imagens */
+        padding: 20px 20px !important;
+        gap: 30px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 2. Ajusta a área de textos para ocupar a largura total */
+    .sobre-texto {
+        width: 100% !important;
+        text-align: left; /* Mantém a leitura natural ou mude para 'center' se preferir */
+    }
+
+    /* Ajusta o título principal da página sobre */
+    .sobre-texto h1, 
+    .sobre-texto h2 {
+        font-size: 26px !important;
+        line-height: 1.3;
+        text-align: center; /* Centralizar os títulos principais no celular fica ótimo */
+        margin-bottom: 15px;
+    }
+
+    /* Melhora o espaçamento e leitura dos parágrafos */
+    .sobre-texto p {
+        font-size: 16px !important;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* 3. Ajusta a área das imagens para que elas não fiquem espremidas na lateral */
+    .sobre-imagens {
+        display: flex !important;
+        flex-direction: column !important; /* Empilha as fotos uma embaixo da outra */
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* Faz com que cada imagem ocupe uma proporção excelente no celular */
+    .sobre-imagens img {
+        width: 90% !important; /* Quase toda a largura da tela */
+        max-width: 320px !important; /* Evita que fiquem gigantes em celulares muito grandes */
+        height: auto !important;
+        border-radius: 12px; /* Mantém o acabamento arredondado e bonito */
+        margin: 0 auto !important;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Um efeito sutil de sombra */
+    }
+
+}
