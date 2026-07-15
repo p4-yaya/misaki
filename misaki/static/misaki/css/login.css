@@ -45,7 +45,7 @@
             text-align: center;
             margin: 20px 0;
             color: #666;
-            width: 100%;                    /* Garante que ocupe a largura total útil do card */
+            width: 100%;                    
             font-size: 14px;
         }
         
@@ -76,6 +76,13 @@
             font-size: 17px;
             cursor: pointer;
             transition: .3s;
+        }
+
+        .btn img {
+            width: 20px;          /* Ajuste a largura como preferir (ex: 18px, 20px, 24px) */
+            height: auto;         /* Mantém a proporção da imagem */
+            vertical-align: middle; /* Alinha a imagem verticalmente com o texto do botão */
+            margin-right: 10px;   /* Espaço entre a imagem e o texto */
         }
 
 
