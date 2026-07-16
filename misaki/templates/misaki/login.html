@@ -18,7 +18,10 @@
 
         <!-- LOGO IMAGEM -->
         <div class="logo">
-            <img src="{% static 'misaki/img/logo.png' %}" alt="Misaki">
+        <!-- Clicar na logo recarrega a página inicial -->
+            <a href="{% url 'misaki:inicial' %}">
+            <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
+            </a>
         </div>
             <p class="subtitle">
                 Faça seu login:

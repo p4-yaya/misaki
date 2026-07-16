@@ -1,11 +1,12 @@
 from django.urls import path
 from . import views
 
-app_name = "misaki"
+app_name = 'misaki'
 
 urlpatterns = [
-    path("", views.inicial, name="inicial"),
-    path("login/", views.login, name="login"),
-    path("sobre/", views.sobre, name="sobre"),
-    path("produtos/", views.produtos, name="produtos"),
+    path('', views.inicial, name='inicial'),
+    path('login/', views.login, name='login'),
+    path('sobre/', views.sobre, name='sobre'),
+    # O <int:id> diz ao Django para aceitar um número após 'produtos/' e chamá-lo de 'id'
+    path('produtos/<int:id>/', views.produtos, name='produtos'),
 ]

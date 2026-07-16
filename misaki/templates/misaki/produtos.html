@@ -1,97 +1,120 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'misaki/css/style.css' %}">
-    <title>Produto</title>    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ produto.titulo }} - Misaki Store</title>
+  <link rel="stylesheet" href="{% static 'misaki/css/style.css' %}">
 </head>
 <body>
-  <!--Topo-->
+
   <header class="topo">
-  
-      <div class="navbar">
-  
-        <div class="menu">
-          <a href="{% url 'misaki:inicial' %}">
+    <div class="curva"></div>
+    <div class="navbar">
+      <div class="menu">
+        <a href="{% url 'misaki:inicial' %}">
             <button>Home</button>
-          </a>
-            <button>Sobre</button>
-          <a href="https://wa.me/5584992304198" target="_blank">
-            <button>Contato</button>
-          </a>  
-        </div>
-  
-        <div class="logo">
-          <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
-        </div>
-  
-        <div class="icons-esquerda">
-          <img src="{% static 'misaki/img/sacola.png' %}" alt="compras">
-          <img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar">
-        </div>
-  
+        </a>
+        <a href="{% url 'misaki:sobre' %}">
+          <button>Sobre</button>
+        </a>
+        <a href="https://wa.me/5584992304198" target="_blank">
+          <button>Contato</button>
+        </a>  
       </div>
-  
-    </header>
 
-<main class="produto-container">
+      <div class="logo">
+        <!-- Link para voltar à página inicial ao clicar no logotipo -->
+        <a href="{% url 'misaki:inicial' %}">
+          <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
+        </a>
+      </div>
+
+      <div class="icons-esquerda">
+        <a href="{% url 'misaki:login' %}"><img src="{% static 'misaki/img/sacola.png' %}" alt="compras"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL DO PRODUTO SELECIONADO -->
+  <main class="produto-container">
+      
+      <section class="galeria">
+        <!-- Container que guarda as fotos grandes -->
+        <div class="slider-fotos">
+            {% for foto in produto.miniaturas %}
+                <!-- Cada foto ganha um ID único usando o contador do loop (ex: foto-1, foto-2) -->
+                <div class="slide-item" id="foto-{{ forloop.counter }}">
+                    <img src="{% static foto %}" alt="{{ produto.titulo }}">
+                </div>
+            {% endfor %}
+        </div>
         
-        <section class="galeria">
-            <img class="foto-principal" src="{% static 'misaki/img/produtos/pd1.png' %}" alt="Bastidor Fairy Tail">
-            
-            <div class="carrossel-miniaturas">
-                <button class="seta-carrossel">&larr;</button>
-                <img class="miniatura ativa" src="{% static 'misaki/img/produtos/pd1.png' %}" alt="Miniatura 1">
-                <img class="miniatura" src="{% static 'misaki/img/produtos/pd2.png' %}" alt="Miniatura 2">
-                <img class="miniatura" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Miniatura 3">
-                <button class="seta-carrossel">&rarr;</button>
-            </div>
-        </section>
+        <!-- As miniaturas agora funcionam como links âncoras para os IDs das fotos acima -->
+        <div class="carrossel-miniaturas">
+            {% for foto in produto.miniaturas %}
+                <a href="#foto-{{ forloop.counter }}" class="link-miniatura">
+                    <img class="miniatura" src="{% static foto %}" alt="Miniatura {{ forloop.counter }}">
+                </a>
+            {% endfor %}
+        </div>
+      </section>
 
-        <section class="info-produto">
-            <h1 class="titulo-produto">Bastidor 16cm - Fairy Tail</h1>
-            <div class="valor">R$ 130,00</div>
+      <section class="info-produto">
+          <!-- Título e Preço Dinâmicos -->
+          <h1 class="titulo-produto">{{ produto.titulo }}</h1>
+          <div class="valor">R$ {{ produto.preco }}</div>
 
-            <div class="acoes-compra">
-                <button class="seletor-qtd">+ 1</button>
-                <button class="btn-carrinho">
-                    <img src="{% static 'misaki/img/sacola.png' %}" style="width:18px; filter:none;" alt="">
-                    + Adicionar ao carrinho
-                </button>
-            </div>
-            <a href="https://w.app/misaki" target="_blank">
-             <button class="btn-compre-ja">Compre já</button>
-            </a>
-            
+          <div class="acoes-compra">
+              <button class="seletor-qtd">+ 1</button>
+              <button class="btn-carrinho">
+                  <img src="{% static 'misaki/img/sacola.png' %}" style="width:18px; filter:none;" alt="">
+                  + Adicionar ao carrinho
+              </button>
+          </div>
+          
+          <a href="https://w.app/misaki" target="_blank">
+              <button class="btn-compre-ja">Compre já</button>
+          </a>
+          
+          <!-- Introdução do Produto Dinâmica -->
+          <p class="texto-introducao">
+              {{ produto.introducao }}
+          </p>
 
-            <p class="texto-introducao">
-                ✨ O bastidor bordado Fairy Tail é uma peça artesanal feita com carinho para fãs que amam decorar seu cantinho com itens únicos e cheios de personalidade. ✨
-            </p>
+          <div class="secao-detalhes">
+              <h3>✏️ Descrição:</h3>
+              <ul>
+                  <li>Tamanho: {{ produto.tamanho }}</li>
+                  <li>Por se tratar de um produto artesanal, podem ocorrer pequenas variações que tornam a peça única.</li>
+              </ul>
+          </div>
 
-            <div class="secao-detalhes">
-                <h3>✏️ Descrição:</h3>
-                <ul>
-                    <li>Tamanho: 16 cm de diâmetro</li>
-                    <li>Por se tratar de um produto artesanal, podem ocorrer pequenas variações que tornam a peça única.</li>
-                </ul>
-            </div>
+          <div class="secao-detalhes">
+              <h3>🧵 Cuidados:</h3>
+              <!-- Exibe cada frase de cuidado cadastrada na lista -->
+              {% for cuidado in produto.cuidados %}
+                  <p>{{ cuidado }}</p>
+              {% endfor %}
+          </div>
 
-            <div class="secao-detalhes">
-                <h3>🧵 Cuidados:</h3>
-                <p>Evite contato com água e umidade excessiva;</p>
-                <p>Não utilizar produtos químicos ou abrasivos na limpeza.</p>
-            </div>
+          <!-- Rodapé do Produto Dinâmico -->
+          <p class="texto-rodape">
+              {{ produto.rodape }}
+          </p>
+      </section>
 
-            <p class="texto-rodape">
-                Perfeito para presentear ou decorar seu espaço com a magia de Fairy Tail! 💜
-            </p>
-        </section>
+  </main>
 
-    </main>
+  <footer>
+    <p>
+      <a href="https://www.instagram.com/misakiatelie/" target="_blank"> 
+        <img class="insta" src="{% static 'misaki/img/insta.png' %}" alt="instagram"> @misakiatelie
+      </a> © 2026 Misaki Store. Todos os direitos reservados.
+    </p>
+  </footer>
 
 </body>
-
 </html>
