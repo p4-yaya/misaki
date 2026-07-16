@@ -26,7 +26,6 @@
       </div>
 
       <div class="logo">
-        <!-- Link para voltar à página inicial ao clicar no logotipo -->
         <a href="{% url 'misaki:inicial' %}">
           <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
         </a>
@@ -45,14 +44,13 @@
         <!-- Container que guarda as fotos grandes -->
         <div class="slider-fotos">
             {% for foto in produto.miniaturas %}
-                <!-- Cada foto ganha um ID único usando o contador do loop (ex: foto-1, foto-2) -->
                 <div class="slide-item" id="foto-{{ forloop.counter }}">
                     <img src="{% static foto %}" alt="{{ produto.titulo }}">
                 </div>
             {% endfor %}
         </div>
         
-        <!-- As miniaturas agora funcionam como links âncoras para os IDs das fotos acima -->
+        <!-- As miniaturas -->
         <div class="carrossel-miniaturas">
             {% for foto in produto.miniaturas %}
                 <a href="#foto-{{ forloop.counter }}" class="link-miniatura">
@@ -63,7 +61,6 @@
       </section>
 
       <section class="info-produto">
-          <!-- Título e Preço Dinâmicos -->
           <h1 class="titulo-produto">{{ produto.titulo }}</h1>
           <div class="valor">R$ {{ produto.preco }}</div>
 
@@ -79,7 +76,7 @@
               <button class="btn-compre-ja">Compre já</button>
           </a>
           
-          <!-- Introdução do Produto Dinâmica -->
+          <!-- Introdução do Produto -->
           <p class="texto-introducao">
               {{ produto.introducao }}
           </p>
@@ -94,13 +91,12 @@
 
           <div class="secao-detalhes">
               <h3>🧵 Cuidados:</h3>
-              <!-- Exibe cada frase de cuidado cadastrada na lista -->
+              <!-- frase de cuidado da lista -->
               {% for cuidado in produto.cuidados %}
                   <p>{{ cuidado }}</p>
               {% endfor %}
           </div>
 
-          <!-- Rodapé do Produto Dinâmico -->
           <p class="texto-rodape">
               {{ produto.rodape }}
           </p>

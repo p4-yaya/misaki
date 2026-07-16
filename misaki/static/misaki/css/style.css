@@ -187,35 +187,34 @@ body {
 /* CONTAINER PRINCIPAL DO SLIDER */
 .slider-fotos {
   display: flex;
-  overflow-x: auto;          /* Permite rolar horizontalmente se arrastar */
-  scroll-behavior: smooth;   /* Faz o deslize ao clicar nas miniaturas ser suave */
-  scroll-snap-type: x mandatory; /* Força a foto a alinhar perfeitamente na tela ao parar */
+  overflow-x: auto;          
+  scroll-behavior: smooth;   
+  scroll-snap-type: x mandatory; 
   width: 100%;
-  max-width: 500px;          /* Limite de tamanho da imagem principal */
-  height: 400px;             /* Altura da imagem principal */
+  max-width: 500px;          
+  height: 400px;            
   margin: 0 auto;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   
-  /* Esconde a barra de rolagem horizontal padrão do navegador */
-  scrollbar-width: none;     /* Firefox */
+  scrollbar-width: none;    
 }
 .slider-fotos::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari e Opera */
+  display: none;             
 }
 
 /* CADA ITEM DO SLIDE */
 .slide-item {
-  flex: 0 0 100%;            /* Cada foto ocupa exatamente 100% da largura do slider */
+  flex: 0 0 100%;            
   width: 100%;
   height: 100%;
-  scroll-snap-align: start;  /* Alinha cada foto no início do container ao deslizar */
+  scroll-snap-align: start;  
 }
 
 .slide-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* Corta a imagem proporcionalmente sem distorcer */
+  object-fit: cover;         
 }
 
 /* CARROSSEL DE MINIATURAS */
@@ -240,7 +239,6 @@ body {
   transition: .3s;
 }
 
-/* Efeito visual ao passar o mouse nas miniaturas */
 .miniatura:hover {
   border-color: #FF8693;
   transform: scale(1.05);
@@ -378,18 +376,17 @@ body {
 }
 
 .sobre-body {
-    background-color: #552B98; /* Roxo escuro de fundo */
-    color: #FFD7DB;            /* Letras amarelo-ouro/creme */
+    background-color: #552B98; 
+    color: #FFD7DB;            
 }
 
 
-/* Container de Duas Colunas */
 .sobre-container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 30px;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Lado esquerdo texto um pouco maior */
+    grid-template-columns: 1.2fr 0.8fr; 
     gap: 50px;
     align-items: start;
 }
@@ -416,7 +413,7 @@ body {
     line-height: 1.7;
     margin-bottom: 15px;
     text-align: justify;
-    color: #fff6cc; /* Tom de creme levemente mais claro para leitura fluida */
+    color: #fff6cc; 
 }
 
 
@@ -445,9 +442,9 @@ footer {
 }
 
 .insta{
-  width: 20px;          /* Ajuste a largura como preferir (ex: 18px, 20px, 24px) */
-  height: auto;         /* Mantém a proporção da imagem */
-  vertical-align: middle; /* Alinha a imagem verticalmente com o texto do botão */
+  width: 20px;         
+  height: auto;         
+  vertical-align: middle; 
 }
 
 /* FORMULÁRIO DE BUSCA */
@@ -457,7 +454,7 @@ footer {
   background: #f1f1f1;
   border-radius: 20px;
   padding: 5px 10px;
-  margin-right: 15px; /* Espaço para não colar nos outros ícones */
+  margin-right: 15px; 
 }
 
 .form-busca input {
@@ -470,7 +467,6 @@ footer {
   transition: width 0.3s;
 }
 
-/* Aumenta de tamanho suavemente quando o usuário clica para digitar */
 .form-busca input:focus {
   width: 180px; 
 }
@@ -485,16 +481,14 @@ footer {
 }
 
 .btn-busca img {
-  width: 20px; /* Ajuste o tamanho do ícone da lupa aqui */
+  width: 20px; 
   height: auto;
 }
 
 
-/* --- COMPORTAMENTO GERAL CONTRA VAZAMENTO (Adicione isso para segurança) --- */
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Impede totalmente a rolagem horizontal/tela cortada */
-    margin: 0;
+    overflow-x: hidden; 
     padding: 0;
     box-sizing: border-box;
 }

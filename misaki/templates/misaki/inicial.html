@@ -31,7 +31,6 @@
 
       <div class="icons-esquerda">
         <a href="{% url 'misaki:login' %}"><img src="{% static 'misaki/img/sacola.png' %}" alt="compras"></a>
-        <!-- Como deve ficar: -->
         <form method="GET" action="{% url 'misaki:inicial' %}" class="form-busca">
           <input type="text" name="q" placeholder="Pesquisar..." value="{{ request.GET.q }}">
           <button type="submit" class="btn-busca">
@@ -51,11 +50,11 @@
     <div class="corpo-categoria">
 
       <h2 class="produto">Produtos:</h2>
-  <!-- SEÇÃO DINÂMICA DOS CARDS DE PRODUTOS -->
+
+  <!-- SEÇÃO DE PRODUTOS -->
       <div class="linha">
         {% if produtos %}
           {% for produto in produtos %}
-            <!-- Passamos o ID do produto dinamicamente para criar a URL correta -->
             <a href="{% url 'misaki:produtos' produto.id %}">
               <div class="col-4">
                 <img src="{% static produto.imagem %}" alt="{{ produto.titulo }}">

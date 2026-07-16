@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 
-# 1. Criamos a nossa base de dados simulada (com todos os detalhes de cada produto)
+#Dicionario de produtos
 PRODUTOS_DB = [
     {
         "id": 1,
@@ -67,7 +67,7 @@ PRODUTOS_DB = [
     {
         "id": 4,
         "titulo": "Chaveiro Mini Bastidor de Madeira",
-        "preco": "30,00",
+        "preco": "15,00",
         "imagem": "misaki/img/produtos/pd4.png",       
         "foto_principal": "misaki/img/produtos/pd4.png",
         "miniaturas": [
@@ -89,13 +89,13 @@ def login(request):
     return render(request, "misaki/login.html")
 
 def inicial(request):
-    # 1. Pega o texto enviado pelo formulário (se não houver nada, retorna vazio)
+    # Pega o texto enviado pelo formulário (se não houver nada, retorna vazio)
     termo_busca = request.GET.get('q', '').strip()
 
-    # 2. Começamos com todos os produtos da base
+    # Começamos com todos os produtos da base
     produtos_filtrados = PRODUTOS_DB
 
-    # 3. Se o usuário digitou alguma coisa, filtramos a lista
+    # Se o usuário digitou alguma coisa, filtramos a lista
     if termo_busca:
         produtos_filtrados = []
         for prod in PRODUTOS_DB:
