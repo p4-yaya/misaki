@@ -18,11 +18,7 @@
           <a href="{% url 'misaki:inicial' %}">
             <button>Home</button>
           </a>
-
-          <a href="{% url 'misaki:sobre' %}">
             <button>Sobre</button>
-          </a>
-
           <a href="https://wa.me/5584992304198" target="_blank">
             <button>Contato</button>
           </a>  
@@ -33,43 +29,31 @@
         </div>
   
         <div class="icons-esquerda">
-            <a href="{% url 'misaki:login' %}"><img src="{% static 'misaki/img/sacola.png' %}" alt="compras"></a>
-            <a href=""><img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar"></a>
+          <img src="{% static 'misaki/img/sacola.png' %}" alt="compras">
+          <img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar">
         </div>
   
       </div>
   
     </header>
 
-    <main class="produto-container">
+<main class="produto-container">
         
         <section class="galeria">
-            <!-- 1. A foto principal agora é definida dinamicamente pelo Python -->
-            <img class="foto-principal" src="{% static foto_atual %}" alt="Bastidor Fairy Tail">
+            <img class="foto-principal" src="{% static 'misaki/img/produtos/pd1.png' %}" alt="Bastidor Fairy Tail">
             
             <div class="carrossel-miniaturas">
-                <!-- 2. Seta Esquerda agora aponta para o ID anterior -->
-                <a href="?foto={{ anterior_id }}" class="seta-carrossel">&larr;</a>
-                
-                <!-- 3. Miniaturas envoltas em links que definem o parâmetro '?foto=' -->
-                <a href="?foto=0">
-                    <img class="miniatura {% if foto_id_atual == 0 %}ativa{% endif %}" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Miniatura 1">
-                </a>
-                <a href="?foto=1">
-                    <img class="miniatura {% if foto_id_atual == 1 %}ativa{% endif %}" src="{% static 'misaki/img/produtos/pd3_1.png' %}" alt="Miniatura 2">
-                </a>
-                <a href="?foto=2">
-                    <img class="miniatura {% if foto_id_atual == 2 %}ativa{% endif %}" src="{% static 'misaki/img/produtos/pd3_2.png' %}" alt="Miniatura 3">
-                </a>
-                
-                <!-- 4. Seta Direita agora aponta para o próximo ID -->
-                <a href="?foto={{ proximo_id }}" class="seta-carrossel">&rarr;</a>
+                <button class="seta-carrossel">&larr;</button>
+                <img class="miniatura ativa" src="{% static 'misaki/img/produtos/pd1.png' %}" alt="Miniatura 1">
+                <img class="miniatura" src="{% static 'misaki/img/produtos/pd2.png' %}" alt="Miniatura 2">
+                <img class="miniatura" src="{% static 'misaki/img/produtos/pd3.png' %}" alt="Miniatura 3">
+                <button class="seta-carrossel">&rarr;</button>
             </div>
         </section>
 
         <section class="info-produto">
-            <h1 class="titulo-produto">Porta aliança</h1>
-            <div class="valor">R$ 100,00</div>
+            <h1 class="titulo-produto">Bastidor 16cm - Fairy Tail</h1>
+            <div class="valor">R$ 130,00</div>
 
             <div class="acoes-compra">
                 <button class="seletor-qtd">+ 1</button>
@@ -78,13 +62,13 @@
                     + Adicionar ao carrinho
                 </button>
             </div>
-
-            <a href="https://w.app/porta" target="_blank">
-                <button class="btn-compre-ja">Compre já</button>
+            <a href="https://w.app/misaki" target="_blank">
+             <button class="btn-compre-ja">Compre já</button>
             </a>
+            
 
             <p class="texto-introducao">
-                ✨ O bastidor bordado para portar aliança, uma peça artesanal feita com carinho para eternizar e simbolizar as alianças de noivado ✨
+                ✨ O bastidor bordado Fairy Tail é uma peça artesanal feita com carinho para fãs que amam decorar seu cantinho com itens únicos e cheios de personalidade. ✨
             </p>
 
             <div class="secao-detalhes">
@@ -102,19 +86,11 @@
             </div>
 
             <p class="texto-rodape">
-                Perfeito para decorar e eternizar seu a magia de seu noivado! 💜
+                Perfeito para presentear ou decorar seu espaço com a magia de Fairy Tail! 💜
             </p>
         </section>
 
     </main>
-
-   <footer>
-    <p>
-    <a href="https://www.instagram.com/misakiatelie/" target="_blank"> 
-    <img class="insta" src="{% static 'misaki/img/insta.png' %}" alt="instagram"> @misakiatelie
-    </a> © 2026 Misaki Store. Todos os direitos reservados.
-    </p>
-  </footer>
 
 </body>
 
