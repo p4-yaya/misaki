@@ -82,6 +82,28 @@ PRODUTOS_DB = [
             "Evite quedas ou fortes impactos para preservar a integridade da moldura de madeira."
         ],
         "rodape": "Escolha o formato que mais combina com você e carregue esse amor em forma de bordado! 💜"
+    },
+
+    {
+        "id": 5,
+        "titulo": "Bordado Bastidor Eren Yeager (Attack on Titan)",
+        "preco": "130,00",
+        "imagem": "misaki/img/produtos/pd5.png",       
+        "foto_principal": "misaki/img/produtos/pd5.png",
+        "miniaturas": [
+            "misaki/img/produtos/pd5.png",
+            "misaki/img/produtos/pd5_1.png",         
+            "misaki/img/produtos/pd5_2.png"         
+
+        ],
+        "introducao": "✨ Leve para casa uma obra de arte afetiva e cheia de personalidade! Nosso bastidor do Eren Yeager (Shingeki no Kyojin / Attack on Titan) é inteiramente bordado à mão livre, destacando traços marcantes e as icônicas marcas de titã em vermelho com pássaros ao redor. Perfeito para decorar seu espaço favorito com referências marcantes do seu anime preferido. ✨",
+        "tamanho": "Formato disponível: Redondo (Bastidor de 20cm)",
+        "cuidados": [
+            "Por conter base de madeira (bastidor) e tecido, evite qualquer contato com água ou umidade.",
+            "Para limpeza de poeira, utilize apenas um pano seco e macio ou um espanador delicado.",
+            "Evite quedas ou fortes impactos para preservar a integridade da moldura do bastidor."
+        ],
+        "rodape": "Decore o seu ambiente com a força e a liberdade deste bordado exclusivo! 💜"
     }
 ]
 
