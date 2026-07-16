@@ -31,7 +31,13 @@
 
       <div class="icons-esquerda">
         <a href="{% url 'misaki:login' %}"><img src="{% static 'misaki/img/sacola.png' %}" alt="compras"></a>
-        <a href=""><img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar"></a>
+        <!-- Como deve ficar: -->
+        <form method="GET" action="{% url 'misaki:inicial' %}" class="form-busca">
+          <input type="text" name="q" placeholder="Pesquisar..." value="{{ request.GET.q }}">
+          <button type="submit" class="btn-busca">
+            <img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar">
+          </button>
+        </form>    
       </div>
 
     </div>
@@ -45,51 +51,21 @@
     <div class="corpo-categoria">
 
       <h2 class="produto">Produtos:</h2>
-
+  <!-- SEÇÃO DINÂMICA DOS CARDS DE PRODUTOS -->
       <div class="linha">
-        <a href="{% url 'misaki:produtos' %}">
-          <div class="col-4">
-            <img src="{% static 'misaki/img/produtos/pd1.png' %}" alt="">
-            <div class="preco">Comprar - R$ 130,00</div>
-          </div>
-        </a>
-
-
-        <a href="{% url 'misaki:produtos2' %}">
-          <div class="col-4">
-            <img src="{% static 'misaki/img/produtos/pd3.png' %}" alt="">
-            <div class="preco">Comprar - R$ 100,00</div>
-          </div>
-        </a>
-
-        <a href="{% url 'misaki:produtos' %}">
-          <div class="col-4">
-            <img src="{% static 'misaki/img/produtos/pd2.png' %}" alt="">
-            <div class="preco">Apartir de R$ 20,00</div>
-          </div>
-        </a>
-
-        <a href="{% url 'misaki:produtos' %}">
-          <div class="col-4">
-            <img src="{% static 'misaki/img/produtos/pd4.png' %}" alt="">
-            <div class="preco">Comprar - R$ 49,90</div>
-          </div>
-        </a>
-
-        <a href="{% url 'misaki:produtos' %}">
-          <div class="col-4">
-            <img src="{% static 'misaki/img/produtos/pd5.png' %}" alt="">
-            <div class="preco">Comprar - R$ 49,90</div>
-          </div>
-        </a>
-
-        <a href="{% url 'misaki:produtos' %}">
-          <div class="col-4">
-            <img src="{% static 'misaki/img/produtos/pd6.png' %}" alt="">
-            <div class="preco">Comprar - R$ 49,90</div>
-          </div>
-        </a>
-
+        {% if produtos %}
+          {% for produto in produtos %}
+            <!-- Passamos o ID do produto dinamicamente para criar a URL correta -->
+            <a href="{% url 'misaki:produtos' produto.id %}">
+              <div class="col-4">
+                <img src="{% static produto.imagem %}" alt="{{ produto.titulo }}">
+                <div class="preco">Comprar - R$ {{ produto.preco }}</div>
+              </div>
+            </a>
+          {% endfor %}
+        {% else %}
+          <p>Nenhum produto disponível no momento.</p>
+        {% endif %}
       </div>
     </div>
 

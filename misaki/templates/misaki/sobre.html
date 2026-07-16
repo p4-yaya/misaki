@@ -29,12 +29,14 @@
       </div>
 
       <div class="logo">
-        <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
+        <!-- Clicar na logo recarrega a página inicial -->
+        <a href="{% url 'misaki:inicial' %}">
+          <h1><img src="{% static 'misaki/img/m.png' %}" alt="m"></h1>
+        </a>
       </div>
 
       <div class="icons-esquerda">
         <a href="{% url 'misaki:login' %}"><img src="{% static 'misaki/img/sacola.png' %}" alt="compras"></a>
-        <a href=""><img src="{% static 'misaki/img/lupa.png' %}" alt="pesquisar"></a>
         <div>
           <a href="https://www.instagram.com/misakiatelie/" target="_blank"> 
           <img src="{% static 'misaki/img/insta.png' %}" alt="instagram">
