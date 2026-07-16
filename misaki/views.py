@@ -62,6 +62,26 @@ PRODUTOS_DB = [
             "Se necessário, limpe delicadamente com um pano seco ou escovinha de cerdas muito macias."
         ],
         "rodape": "Escolha o seu modelo favorito e carregue essa arte com você! 💜"
+    },
+
+    {
+        "id": 4,
+        "titulo": "Chaveiro Mini Bastidor de Madeira",
+        "preco": "30,00",
+        "imagem": "misaki/img/produtos/pd4.png",       
+        "foto_principal": "misaki/img/produtos/pd4.png",
+        "miniaturas": [
+            "misaki/img/produtos/pd4.png",             
+            "misaki/img/produtos/pd4_1.png",           
+        ],
+        "introducao": "✨ Adicione um toque minimalista e super afetivo ao seu dia a dia! Nossos mini chaveiros são bordados à mão em tecido e delicadamente emoldurados em bases de madeira. Com ilustrações super fofas que vão de patinhas e gatinhos até referências de Harry Potter, Frida Kahlo e Totoro. ✨",
+        "tamanho": "Formatos disponíveis: Quadrado (4cm x 4cm) e Oval (5cm de altura)",
+        "cuidados": [
+            "Por conter base de madeira (MDF) e tecido, evite qualquer contato com água ou umidade.",
+            "Para limpeza de poeira, utilize apenas um pano seco e macio.",
+            "Evite quedas ou fortes impactos para preservar a integridade da moldura de madeira."
+        ],
+        "rodape": "Escolha o formato que mais combina com você e carregue esse amor em forma de bordado! 💜"
     }
 ]
 
